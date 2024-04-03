@@ -20,13 +20,13 @@
 [![AtCoder](https://badges.joonhyung.xyz/atcoder/zlfn.svg)](https://atcoder.jp/zlfn/topology)  
 엣코더 스텟카드는 못찾았음...
 --------------------------
-### C++ PS 프리셋 (v1.0, 2024.04.04)
+### C++ PS 프리셋 (v1.1, 2024.04.04)
 #### 주요 기능
 * ONLINE_JUDGE 환경에서 빠른 입출력 활성화
 * debug 출력 제공 (cout과 사용법은 동일하나 로컬환경에서만 출력)
-* loop 매크로 (인덱스에 IDX로 접근)
+* loop, loopi 매크로
 * llint 매크로
-* streamIO 매크로 (nn, nnn, endl, nendl, nendln, spc, nspc, nspcn, coutn, cinn)
+* streamIO 매크로 (nn, nnn, endl, nendl, nendln, spc, nspc, nspcn, coutn, cinn, coutnendl, coutnspc)
 * 변수 선언 및 입력 매크로 (cind, cindint ... cindstring)
 
 ```cpp
@@ -166,7 +166,10 @@ OUTPUT& operator<< (OUTPUT& out, T i) {
 #define cinddouble(x) cind(double, x)
 #define cindstring(x) cind(string, x)
 #define coutn cout <<
+#define coutnendl cout nendl
+#define coutnspc cout nspc
 #define loop(x) for(int IDX = 0; IDX < x; IDX++)
+#define loopi(x, i) for(int i = 0; i < x; i++)
 
 //debug
 #ifdef ONLINE_JUDGE
