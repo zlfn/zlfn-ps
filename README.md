@@ -184,6 +184,8 @@ constexpr bool DEBUGENV = true;
 * Rust의 거지같은 표준입출력을 간략하게 만듬
 
 ```rs
+use std::io;
+
 macro_rules! read_line {
     ($($t: ty),+) => ({
         let mut input = String::new();
