@@ -28,6 +28,7 @@
 * llint 매크로
 * streamIO 매크로 (nn, nnn, endl, nendl, nendln, spc, nspc, nspcn, coutn, cinn)
 * 변수 선언 및 입력 매크로 (cind, cindint ... cindstring)
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
