@@ -178,3 +178,35 @@ constexpr bool DEBUGENV = true;
 #define debugn debug <<
 /////////////////////////////////////////////////////////////////////
 ```
+
+### Rust PS 프리셋 (v1.0, 2024.04.04)
+#### 주요 기능
+* Rust의 거지같은 표준입출력을 간략하게 만듬
+
+```rs
+macro_rules! read_line {
+    ($($t: ty),+) => ({
+        let mut input = String::new();
+        std::io::stdin().read_line(&mut input).unwrap();
+        let mut iter = input.split_whitespace();
+        ($(iter.next().unwrap().parse::<$t>().unwrap()),+)
+    })
+}
+
+macro_rules! read_vec {
+    ($t: ty) => ({
+        let mut input = String::new();
+        std::io::stdin( ).read_line(&mut input).unwrap();
+        input.split_whitespace().map(|x| x.parse::<$t>().unwrap()).collect()
+    })
+}
+
+macro_rules! read_char {
+    () => ({
+        let mut input = String::new();
+        std::io::stdin().read_line(&mut input).unwrap();
+        input = input.replace("\n", "");
+        input.chars().collect()
+    })
+}
+```
