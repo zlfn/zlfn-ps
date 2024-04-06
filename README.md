@@ -20,20 +20,21 @@
 [![AtCoder](https://badges.joonhyung.xyz/atcoder/zlfn.svg)](https://atcoder.jp/zlfn/topology)  
 엣코더 스텟카드는 못찾았음...
 --------------------------
-### C++ PS 프리셋 (v1.1, 2024.04.04)
+### C++ PS 프리셋 (v1.2, 2024.04.06)
 #### 주요 기능
-* ONLINE_JUDGE 환경에서 빠른 입출력 활성화
-* debug 출력 제공 (cout과 사용법은 동일하나 로컬환경에서만 출력)
-* loop, loopi 매크로
+* MMAP을 이용한 빠른 입출력 (linux 환경에서만 활성화, #define MMAP 주석해제 필요)
+* debug 출력 제공 (cout과 사용법은 동일하나 온라인저지 환경에서 미출력)
+* loop, loopi, cinloop, cinloopi 매크로
 * llint 매크로
-* streamIO 매크로 (nn, nnn, endl, nendl, nendln, spc, nspc, nspcn, coutn, cinn, coutnendl, coutnspc)
-* 변수 선언 및 입력 매크로 (cind, cindint ... cindstring)
+* streamIO 매크로 (nn, nm, endl, nendl, nendln, spc, nspc, nspcn, coutn, cinn, coutnendl, coutnspc)
+* 변수 선언 및 입력 매크로 (cinint ... cinstring)
 
 ```cpp
 #include <bits/stdc++.h>
+//#define MMAP
 using namespace std;
 //////////////////////////////////////////////////////////////////
-#ifdef ONLINE_JUDGE
+#ifdef __linux__
 /////////////////////////////////////////////////////////////////////////////////////////////
 /*
  * Author : jinhan814
@@ -153,32 +154,44 @@ OUTPUT& operator<< (OUTPUT& out, T i) {
 #define nendl << '\n'
 #define nendln << '\n' <<
 #define nn <<
-#define nnn >>
+#define nm >>
 #define spc ' '
 #define nspcn << ' ' <<
 #define nspc << ' '
 #define cinn cin >>
-#define cind(typename, x) typename x; cin >> x
-#define cindint(x) cind(int, x)
-#define cindllint(x) cind(long long int, x)
-#define cindchar(x) cind(char, x)
-#define cindfloat(x) cind(float, x)
-#define cinddouble(x) cind(double, x)
-#define cindstring(x) cind(string, x)
+#define cinint(x) int x; cin >> x
+#define cinllint(x) long long int x; cin >> x
+#define cinchar(x) char x; cin >> x
+#define cinfloat(x) floag x; cin >> x
+#define cindouble(x) double x; cin >> x
+#define cinstring(x) string x; cin >> x
 #define coutn cout <<
 #define coutnendl cout nendl
 #define coutnspc cout nspc
 #define loop(x) for(int IDX = 0; IDX < x; IDX++)
 #define loopi(x, i) for(int i = 0; i < x; i++)
+#define cinloop cinint(INDEX); loop(INDEX)
+#define cinloopi(i) cinint(IDX##i); loopi(IDX##i, i)
 
 //debug
+#define debug if constexpr (DEBUGENV) cout
+#define debugn debug <<
+#define debugnendl debug << endl;
 #ifdef ONLINE_JUDGE
 constexpr bool DEBUGENV = false;
 #else
 constexpr bool DEBUGENV = true;
 #endif
-#define debug if constexpr (DEBUGENV) cout
-#define debugn debug <<
+
+//FASTIO
+#define FASTIO debugn "LOW-LEVEL-IO Enabled" nendl;
+#ifndef MMAP
+#undef cin
+#undef cout
+#undef FASTIO
+#define FASTIO debugn "FAST-IO Enabled" nendl; ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
+#endif
+
 /////////////////////////////////////////////////////////////////////
 ```
 
