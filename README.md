@@ -18,7 +18,7 @@
 --------------------------
 ### [AtCoder](atcoder.jp)
 [![AtCoder](https://badges.joonhyung.xyz/atcoder/zlfn.svg)](https://atcoder.jp/zlfn/topology)  
-엣코더 스텟카드는 못찾았음...
+[![zlfn's atcoder stats](https://atcoder-readme-stats.vercel.app/stats/zlfn?show_icons=true&show_history=5&width=450)](https://atcoder.jp/zlfn/topology)
 --------------------------
 ### C++ PS 프리셋 (v1.2, 2024.04.06)
 #### 주요 기능
