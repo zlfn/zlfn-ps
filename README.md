@@ -5,30 +5,12 @@
 [![AtCoder](https://badges.joonhyung.xyz/atcoder/zlfn.svg)](https://atcoder.jp/zlfn/topology)
 
 ## First, solve the problem. Then, write the code.
-### [Beakjoon Online Judge](boj.kr) ||  [Solved.ac](solved.ac)
 
-[![Solved.ac
-프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=zlfn)](https://solved.ac/zlfn)
-![mazandi profile](http://mazandi.herokuapp.com/api?handle=zlfn&theme=cold)
----------------------------
-### [Codeforces](codeforces.com)
-[![Codeforces](https://badges.joonhyung.xyz/codeforces/zlfn.svg)](https://codeforces.com/profile/zlfn)  
-![](https://raw.githubusercontent.com/zlfn/cf-stats/main/output/light_card.svg)
-[![CodeForces Profile](https://cf.leed.at?id=zlfn)](https://codeforces.com/profile/zlfn)
---------------------------
-### [AtCoder](atcoder.jp)
-[![AtCoder](https://badges.joonhyung.xyz/atcoder/zlfn.svg)](https://atcoder.jp/zlfn/topology)  
-[![zlfn's atcoder stats](https://atcoder-readme-stats.vercel.app/stats/zlfn?show_icons=true&show_history=5&width=450)](https://atcoder.jp/zlfn/topology)
---------------------------
-### C++ PS 프리셋 (v1.2, 2024.04.06)
-#### 주요 기능
-* MMAP을 이용한 빠른 입출력 (linux 환경에서만 활성화, #define MMAP true 필요)
-* debug 출력 제공 (cout과 사용법은 동일하나 온라인저지 환경에서 미출력)
-* loop, loopi, cinloop, cinloopi 매크로
-* llint 매크로
-* streamIO 매크로 (nn, nm, endl, nendl, nendln, spc, nspc, nspcn, coutn, cinn, coutnendl, coutnspc)
-* 변수 선언 및 입력 매크로 (cinint ... cinstring)
-
+## C++ PS 프리셋 (v1.2, 2024.04.06)
+**C++17 이상**
+<details>
+<summary>코드 열기</summary>
+    
 ```cpp
 #include <bits/stdc++.h>
 #define DEBUG true //PRINT DEBUG MESSAGE
@@ -200,10 +182,60 @@ constexpr bool DEBUGENV = false;
 #endif
 /////////////////////////////////////////////////////////////////////
 ```
+    
+</details>
 
-### Rust PS 프리셋 (v1.0, 2024.04.04)
-#### 주요 기능
-* Rust의 거지같은 표준입출력을 간략하게 만듬
+### 주요 기능
+#### FAST/LOW-LEVEL-IO
+* MMAP을 이용한 빠른 입출력 (linux 환경에서만 활성화, #define MMAP true 필요)
+#### Debug
+* debug 출력 제공 (cout과 사용법은 동일하나 온라인저지 환경에서 미출력)
+#### Util
+* loop, loopi, cinloop, cinloopi 매크로
+* llint 매크로
+* streamIO 매크로 (nn, nm, endl, nendl, nendln, spc, nspc, nspcn, coutn, cinn, coutnendl, coutnspc)
+* 변수 선언 및 입력 매크로 (cinint ... cinstring)
+
+## C++ Geometry Extension (v0.1, 2024.04.10)
+**C++20 이상, 기본 Preset 필수**
+<details>
+    <summary>코드 열기</summary>
+    
+```cpp
+//////////////////////////////////////////////////////////////////
+class Point {
+public:
+    int x; int y;
+    Point() {
+        x = 0; y = 0;
+    }
+    Point(int x, int y) {
+        this->x = x; this->y = y;
+    }
+    double operator <=> (const Point& other) const {
+        return sqrt(pow(x-other.x,2) + pow(y-other.y,2));
+    }
+    Point operator - (const Point& other) const {
+        return Point{x-other.x, y-other.y};
+    }
+    Point operator + (const Point& other) const {
+        return Point{x+other.x, y+other.y};
+    }
+    bool operator == (const Point& other) const {
+        return (x==other.x && y==other.y);
+    }
+};
+//////////////////////////////////////////////////////////////////
+```
+</details>
+
+### 주요 기능
+#### Class
+* 2차원 정점 Point `+, -, ==, <=> (거리)` 연산 제공
+
+## Rust PS 프리셋 (v1.0, 2024.04.04)
+<details>
+<summary>코드 열기</summary>
 
 ```rs
 use std::io;
@@ -234,3 +266,27 @@ macro_rules! read_char {
     })
 }
 ```
+    
+</details>
+
+### 주요 기능
+* Rust의 거지같은 표준입출력을 간략하게 만듬
+
+-----------------------------------
+
+#### [Beakjoon Online Judge](boj.kr) ||  [Solved.ac](solved.ac)
+
+[![Solved.ac
+프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=zlfn)](https://solved.ac/zlfn)
+![mazandi profile](http://mazandi.herokuapp.com/api?handle=zlfn&theme=cold)
+---------------------------
+#### [Codeforces](codeforces.com)
+[![Codeforces](https://badges.joonhyung.xyz/codeforces/zlfn.svg)](https://codeforces.com/profile/zlfn)  
+![](https://raw.githubusercontent.com/zlfn/cf-stats/main/output/light_card.svg)
+[![CodeForces Profile](https://cf.leed.at?id=zlfn)](https://codeforces.com/profile/zlfn)
+--------------------------
+#### [AtCoder](atcoder.jp)
+[![AtCoder](https://badges.joonhyung.xyz/atcoder/zlfn.svg)](https://atcoder.jp/zlfn/topology)  
+[![zlfn's atcoder stats](https://atcoder-readme-stats.vercel.app/stats/zlfn?show_icons=true&show_history=5&width=450)](https://atcoder.jp/zlfn/topology)
+--------------------------
+
