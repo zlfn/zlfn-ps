@@ -6,7 +6,7 @@
 
 ## First, solve the problem. Then, write the code.
 
-## C++ PS 프리셋 (v1.2, 2024.04.06)
+## C++ PS Preset (v1.2, 2024.04.06)
 **C++17 이상**
 <details>
 <summary>코드 열기</summary>
