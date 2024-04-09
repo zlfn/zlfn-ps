@@ -22,7 +22,7 @@
 --------------------------
 ### C++ PS 프리셋 (v1.2, 2024.04.06)
 #### 주요 기능
-* MMAP을 이용한 빠른 입출력 (linux 환경에서만 활성화, #define MMAP 주석해제 필요)
+* MMAP을 이용한 빠른 입출력 (linux 환경에서만 활성화, #define MMAP true 필요)
 * debug 출력 제공 (cout과 사용법은 동일하나 온라인저지 환경에서 미출력)
 * loop, loopi, cinloop, cinloopi 매크로
 * llint 매크로
@@ -31,9 +31,16 @@
 
 ```cpp
 #include <bits/stdc++.h>
-//#define MMAP
+#define DEBUG true //PRINT DEBUG MESSAGE
+#define MMAP false //USE LOW-LEVEL-IO
 using namespace std;
 //////////////////////////////////////////////////////////////////
+/*
+ * Author : zlfn
+ * Date : 2024-04-08
+ * Source : https://ps.zlfn.space
+ * Description : C++ Preset for Problem-Solving
+ */
 #ifdef __linux__
 /////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -177,21 +184,20 @@ OUTPUT& operator<< (OUTPUT& out, T i) {
 #define debug if constexpr (DEBUGENV) cout
 #define debugn debug <<
 #define debugnendl debug << endl;
-#ifdef ONLINE_JUDGE
-constexpr bool DEBUGENV = false;
-#else
+#if DEBUG && not defined(ONLINE_JUDGE)
 constexpr bool DEBUGENV = true;
+#else
+constexpr bool DEBUGENV = false;
 #endif
 
 //FASTIO
 #define FASTIO debugn "LOW-LEVEL-IO Enabled" nendl;
-#ifndef MMAP
+#if not MMAP
 #undef cin
 #undef cout
 #undef FASTIO
 #define FASTIO debugn "FAST-IO Enabled" nendl; ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #endif
-
 /////////////////////////////////////////////////////////////////////
 ```
 
