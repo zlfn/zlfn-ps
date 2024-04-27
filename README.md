@@ -2,7 +2,7 @@
 [![Solved.ac
 프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=zlfn)](https://solved.ac/zlfn)
 [![Codeforces](https://badges.joonhyung.xyz/codeforces/zlfn.svg)](https://codeforces.com/profile/zlfn)
-[![AtCoder](https://badges.joonhyung.xyz/atcoder/zlfn.svg)](https://atcoder.jp/zlfn/topology)
+[![AtCoder](https://badges.joonhyung.xyz/atcoder/zlfn.svg)](https://atcoder.jp/users/zlfn)
 
 ## First, solve the problem. Then, write the code.
 
